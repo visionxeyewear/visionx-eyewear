@@ -5,12 +5,12 @@ export default function Home() {
     <div className="min-h-screen bg-white">
       {/* Hero Section */}
       <section className="relative h-[80vh] flex items-center justify-center bg-gray-900 text-white">
-        {/* बॅकग्राउंड इमेज */}
+        {/* बॅकग्राउंड इमेज (Unsplash कडून थेट लिंक) */}
         <div className="absolute inset-0 z-0">
           <img
-            src="/images/banner.jpg" 
-            alt="Eyewear Banner"
-            className="w-full h-full object-cover opacity-50"
+            src="https://images.unsplash.com/photo-1592878968032-411333830001?q=80&w=2070&auto=format&fit=crop" 
+            alt="VisionX Eyewear"
+            className="w-full h-full object-cover opacity-60"
           />
         </div>
 
@@ -23,7 +23,7 @@ export default function Home() {
             Discover Your Perfect Look
           </h1>
           <p className="text-lg text-gray-200 mb-8">
-            Find handcrafted optical frames and trendy sunglasses designed for everyday comfort and style.
+            Style That Speaks You
           </p>
           <div className="flex justify-center gap-4">
             <Link
@@ -42,48 +42,39 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Categories / Featured Section */}
+      {/* Categories Section */}
       <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
         <div className="text-center mb-12">
           <h2 className="text-3xl font-bold text-gray-900">Explore Categories</h2>
-          <p className="text-gray-600 mt-2">Find the perfect look tailored for your style.</p>
         </div>
 
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
           {/* Frame Men */}
-          <Link href="/category/frame-men" className="group relative rounded-lg overflow-hidden bg-gray-100 h-80 flex items-end p-6 shadow-sm hover:shadow-md transition-shadow">
-            <div className="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent z-10" />
-            <div className="relative z-20 text-white">
-              <h3 className="text-xl font-bold">Frame Men</h3>
-              <p className="text-sm text-gray-200 mt-1">Explore Collection &rarr;</p>
-            </div>
+          <Link href="/category/frame-men" className="group relative rounded-lg overflow-hidden h-80 flex items-end p-6">
+            <img src="https://images.unsplash.com/photo-1574258495973-f010dfbb5371?q=80&w=500&auto=format&fit=crop" className="absolute inset-0 w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" alt="Frame Men" />
+            <div className="absolute inset-0 bg-black/40" />
+            <h3 className="relative text-xl font-bold text-white">Frame Men</h3>
           </Link>
 
           {/* Frame Women */}
-          <Link href="/category/frame-women" className="group relative rounded-lg overflow-hidden bg-gray-100 h-80 flex items-end p-6 shadow-sm hover:shadow-md transition-shadow">
-            <div className="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent z-10" />
-            <div className="relative z-20 text-white">
-              <h3 className="text-xl font-bold">Frame Women</h3>
-              <p className="text-sm text-gray-200 mt-1">Explore Collection &rarr;</p>
-            </div>
+          <Link href="/category/frame-women" className="group relative rounded-lg overflow-hidden h-80 flex items-end p-6">
+            <img src="https://images.unsplash.com/photo-1577210497954-454178550175?q=80&w=500&auto=format&fit=crop" className="absolute inset-0 w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" alt="Frame Women" />
+            <div className="absolute inset-0 bg-black/40" />
+            <h3 className="relative text-xl font-bold text-white">Frame Women</h3>
           </Link>
 
           {/* Sunglasses Men */}
-          <Link href="/category/sunglasses-men" className="group relative rounded-lg overflow-hidden bg-gray-100 h-80 flex items-end p-6 shadow-sm hover:shadow-md transition-shadow">
-            <div className="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent z-10" />
-            <div className="relative z-20 text-white">
-              <h3 className="text-xl font-bold">Sunglasses Men</h3>
-              <p className="text-sm text-gray-200 mt-1">Explore Collection &rarr;</p>
-            </div>
+          <Link href="/category/sunglasses-men" className="group relative rounded-lg overflow-hidden h-80 flex items-end p-6">
+            <img src="https://images.unsplash.com/photo-1507764923504-cd8357253519?q=80&w=500&auto=format&fit=crop" className="absolute inset-0 w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" alt="Sunglasses Men" />
+            <div className="absolute inset-0 bg-black/40" />
+            <h3 className="relative text-xl font-bold text-white">Sunglasses Men</h3>
           </Link>
 
           {/* Sunglasses Women */}
-          <Link href="/category/sunglasses-women" className="group relative rounded-lg overflow-hidden bg-gray-100 h-80 flex items-end p-6 shadow-sm hover:shadow-md transition-shadow">
-            <div className="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent z-10" />
-            <div className="relative z-20 text-white">
-              <h3 className="text-xl font-bold">Sunglasses Women</h3>
-              <p className="text-sm text-gray-200 mt-1">Explore Collection &rarr;</p>
-            </div>
+          <Link href="/category/sunglasses-women" className="group relative rounded-lg overflow-hidden h-80 flex items-end p-6">
+            <img src="https://images.unsplash.com/photo-1517022812141-2365fa45d5a0?q=80&w=500&auto=format&fit=crop" className="absolute inset-0 w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" alt="Sunglasses Women" />
+            <div className="absolute inset-0 bg-black/40" />
+            <h3 className="relative text-xl font-bold text-white">Sunglasses Women</h3>
           </Link>
         </div>
       </section>
