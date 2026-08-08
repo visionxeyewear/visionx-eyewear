@@ -39,11 +39,13 @@ export default function Navbar() {
           {/* Brand Logo */}
           <div className="flex-shrink-0">
             <Link href="/" className="flex flex-col">
-              <span className="text-2xl font-bold tracking-tight text-gray-900">VisionX</span>
-              <span className="text-[10px] uppercase tracking-widest text-gray-500 font-medium">Eyewear</span>
-            </Link>
-          </div>
-
+              <img
+              public="/images/logo.jpeg"
+              alt="VisionX Eyewear"
+             className="h-8 w-auto object-contain"
+            />
+          </Link>
+         </div>
           {/* Desktop Navigation Links */}
           <nav className="hidden md:flex items-center space-x-8">
             <Link href="/" className="text-sm font-medium text-gray-700 hover:text-black transition-colors">
