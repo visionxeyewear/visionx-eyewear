@@ -40,7 +40,7 @@ export default function Navbar() {
           <div className="flex-shrink-0">
             <Link href="/" className="flex flex-col">
               <img
-              public="/images/logo.jpeg"
+              src="/images/logo.jpeg"
               alt="VisionX Eyewear"
              className="h-8 w-auto object-contain"
             />
