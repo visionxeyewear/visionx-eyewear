@@ -42,7 +42,7 @@ export default function Navbar() {
               <img
                 src="/images/logo.jpeg"
                 alt="VisionX Eyewear"
-                className="h-25 w-auto object-contain"
+                className="h-10 w-auto object-contain"
               />
             </Link>
           </div>
