@@ -4,16 +4,12 @@ export default function Home() {
   return (
     <div className="min-h-screen bg-white text-gray-900">
       {/* Hero Section */}
-      <section className="relative h-[75vh] flex items-center justify-center text-white px-4 bg-gray-900">
-        {/* थेट ऑनलाइन हाय-क्वालिटी लक्झरी बॅनर इमेज */}
-        <img
-          src="https://images.unsplash.com/photo-1508296695146-257a814070b4?q=80&w=2070&auto=format&fit=crop"
-          alt="VisionX Eyewear"
-          className="absolute inset-0 w-full h-full object-cover opacity-70"
-        />
-        
+      <section 
+        className="relative h-[75vh] flex items-center justify-center text-white px-4 bg-cover bg-center"
+        style={{ backgroundImage: `url('/images/banner.jpg')` }}
+      >
         {/* डार्क ओव्हरले */}
-        <div className="absolute inset-0 bg-black/40" />
+        <div className="absolute inset-0 bg-black/50" />
 
         {/* टेक्स्ट कंटेंट */}
         <div className="relative z-10 text-center max-w-3xl">
