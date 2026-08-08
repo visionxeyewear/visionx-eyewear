@@ -4,12 +4,12 @@ export default function Home() {
   return (
     <div className="min-h-screen bg-white text-gray-900">
       {/* Hero Section */}
-      <section className="relative h-[75vh] flex items-center justify-center text-white px-4">
-        {/* तुमच्या प्रोजेक्टमधील लोकल इमेज */}
+      <section className="relative h-[75vh] flex items-center justify-center text-white px-4 bg-gray-900">
+        {/* थेट ऑनलाइन हाय-क्वालिटी लक्झरी बॅनर इमेज */}
         <img
-          src="/images/banner.jpg"
+          src="https://images.unsplash.com/photo-1508296695146-257a814070b4?q=80&w=2070&auto=format&fit=crop"
           alt="VisionX Eyewear"
-          className="absolute inset-0 w-full h-full object-cover"
+          className="absolute inset-0 w-full h-full object-cover opacity-70"
         />
         
         {/* डार्क ओव्हरले */}
