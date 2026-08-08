@@ -42,7 +42,51 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Categories / Rest of the home page content can go here */}
+      {/* Categories / Featured Section */}
+      <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
+        <div className="text-center mb-12">
+          <h2 className="text-3xl font-bold text-gray-900">Explore Categories</h2>
+          <p className="text-gray-600 mt-2">Find the perfect look tailored for your style.</p>
+        </div>
+
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+          {/* Frame Men */}
+          <Link href="/category/frame-men" className="group relative rounded-lg overflow-hidden bg-gray-100 h-80 flex items-end p-6 shadow-sm hover:shadow-md transition-shadow">
+            <div className="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent z-10" />
+            <div className="relative z-20 text-white">
+              <h3 className="text-xl font-bold">Frame Men</h3>
+              <p className="text-sm text-gray-200 mt-1">Explore Collection &rarr;</p>
+            </div>
+          </Link>
+
+          {/* Frame Women */}
+          <Link href="/category/frame-women" className="group relative rounded-lg overflow-hidden bg-gray-100 h-80 flex items-end p-6 shadow-sm hover:shadow-md transition-shadow">
+            <div className="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent z-10" />
+            <div className="relative z-20 text-white">
+              <h3 className="text-xl font-bold">Frame Women</h3>
+              <p className="text-sm text-gray-200 mt-1">Explore Collection &rarr;</p>
+            </div>
+          </Link>
+
+          {/* Sunglasses Men */}
+          <Link href="/category/sunglasses-men" className="group relative rounded-lg overflow-hidden bg-gray-100 h-80 flex items-end p-6 shadow-sm hover:shadow-md transition-shadow">
+            <div className="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent z-10" />
+            <div className="relative z-20 text-white">
+              <h3 className="text-xl font-bold">Sunglasses Men</h3>
+              <p className="text-sm text-gray-200 mt-1">Explore Collection &rarr;</p>
+            </div>
+          </Link>
+
+          {/* Sunglasses Women */}
+          <Link href="/category/sunglasses-women" className="group relative rounded-lg overflow-hidden bg-gray-100 h-80 flex items-end p-6 shadow-sm hover:shadow-md transition-shadow">
+            <div className="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent z-10" />
+            <div className="relative z-20 text-white">
+              <h3 className="text-xl font-bold">Sunglasses Women</h3>
+              <p className="text-sm text-gray-200 mt-1">Explore Collection &rarr;</p>
+            </div>
+          </Link>
+        </div>
+      </section>
     </div>
   );
 }
