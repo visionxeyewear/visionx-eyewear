@@ -5,14 +5,14 @@ export default function Home() {
     <div className="min-h-screen bg-white text-gray-900">
       {/* Hero Section */}
       <section className="relative h-[75vh] flex items-center justify-center text-white px-4">
-        {/* हाय-क्वालिटी बॅकग्राउंड इमेज */}
+        {/* तुमच्या प्रोजेक्टमधील लोकल इमेज */}
         <img
-          src="https://images.unsplash.com/photo-1583947215259-38e31be0b53f?q=80&w=2070&auto=format&fit=crop"
+          src="/images/banner.jpg"
           alt="VisionX Eyewear"
           className="absolute inset-0 w-full h-full object-cover"
         />
         
-        {/* डार्क ओव्हरले जेणेकरून मजकूर स्पष्ट दिसेल */}
+        {/* डार्क ओव्हरले */}
         <div className="absolute inset-0 bg-black/40" />
 
         {/* टेक्स्ट कंटेंट */}
@@ -51,44 +51,32 @@ export default function Home() {
         </div>
 
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
-          {/* Frame Men */}
           <Link href="/category/frame-men" className="group bg-gray-50 rounded-xl overflow-hidden p-8 text-center shadow-sm hover:shadow-xl transition-all border border-gray-200 flex flex-col justify-between h-64">
-            <div className="w-12 h-12 bg-black text-white rounded-full flex items-center justify-center mx-auto text-xl font-bold">
-              👓
-            </div>
+            <div className="w-12 h-12 bg-black text-white rounded-full flex items-center justify-center mx-auto text-xl font-bold">👓</div>
             <div>
               <h3 className="text-xl font-bold text-gray-900 group-hover:text-blue-600 transition-colors">Frame Men</h3>
               <p className="text-sm text-gray-500 mt-1">Explore Collection &rarr;</p>
             </div>
           </Link>
 
-          {/* Frame Women */}
           <Link href="/category/frame-women" className="group bg-gray-50 rounded-xl overflow-hidden p-8 text-center shadow-sm hover:shadow-xl transition-all border border-gray-200 flex flex-col justify-between h-64">
-            <div className="w-12 h-12 bg-black text-white rounded-full flex items-center justify-center mx-auto text-xl font-bold">
-              👓
-            </div>
+            <div className="w-12 h-12 bg-black text-white rounded-full flex items-center justify-center mx-auto text-xl font-bold">👓</div>
             <div>
               <h3 className="text-xl font-bold text-gray-900 group-hover:text-blue-600 transition-colors">Frame Women</h3>
               <p className="text-sm text-gray-500 mt-1">Explore Collection &rarr;</p>
             </div>
           </Link>
 
-          {/* Sunglasses Men */}
           <Link href="/category/sunglasses-men" className="group bg-gray-50 rounded-xl overflow-hidden p-8 text-center shadow-sm hover:shadow-xl transition-all border border-gray-200 flex flex-col justify-between h-64">
-            <div className="w-12 h-12 bg-black text-white rounded-full flex items-center justify-center mx-auto text-xl font-bold">
-              🕶️
-            </div>
+            <div className="w-12 h-12 bg-black text-white rounded-full flex items-center justify-center mx-auto text-xl font-bold">🕶️</div>
             <div>
               <h3 className="text-xl font-bold text-gray-900 group-hover:text-blue-600 transition-colors">Sunglasses Men</h3>
               <p className="text-sm text-gray-500 mt-1">Explore Collection &rarr;</p>
             </div>
           </Link>
 
-          {/* Sunglasses Women */}
           <Link href="/category/sunglasses-women" className="group bg-gray-50 rounded-xl overflow-hidden p-8 text-center shadow-sm hover:shadow-xl transition-all border border-gray-200 flex flex-col justify-between h-64">
-            <div className="w-12 h-12 bg-black text-white rounded-full flex items-center justify-center mx-auto text-xl font-bold">
-              🕶️
-            </div>
+            <div className="w-12 h-12 bg-black text-white rounded-full flex items-center justify-center mx-auto text-xl font-bold">🕶️</div>
             <div>
               <h3 className="text-xl font-bold text-gray-900 group-hover:text-blue-600 transition-colors">Sunglasses Women</h3>
               <p className="text-sm text-gray-500 mt-1">Explore Collection &rarr;</p>
