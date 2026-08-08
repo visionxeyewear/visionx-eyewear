@@ -79,7 +79,7 @@ export default function Home() {
             <div className="w-12 h-12 bg-black text-white rounded-full flex items-center justify-center mx-auto text-xl font-bold">🕶️</div>
             <div>
               <h3 className="text-xl font-bold text-gray-900 group-hover:text-blue-600 transition-colors">Sunglasses Women</h3>
-              <p className="text-sm text-gray-500 mt-1">Explore Collection &rarr;</p> update/
+              <p className="text-sm text-gray-500 mt-1">Explore Collection &rarr;</p>
             </div>
           </Link>
         </div>
