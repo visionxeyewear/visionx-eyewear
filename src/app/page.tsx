@@ -4,30 +4,24 @@ export default function Home() {
   return (
     <div className="min-h-screen bg-white text-gray-900">
       {/* Hero Section */}
-      <section 
-        className="relative h-[75vh] flex items-center justify-center text-white px-4 bg-cover bg-center"
-        style={{ backgroundImage: `url('/images/banner.jpg')` }}
-      >
-        {/* डार्क ओव्हरले */}
-        <div className="absolute inset-0 bg-black/50" />
-
+      <section className="relative h-[70vh] flex items-center justify-center bg-zinc-950 text-white px-4">
         {/* टेक्स्ट कंटेंट */}
         <div className="relative z-10 text-center max-w-3xl">
-          <span className="text-xs sm:text-sm uppercase tracking-widest text-gray-200 font-semibold">
+          <span className="text-xs sm:text-sm uppercase tracking-widest text-amber-400 font-semibold">
             VISIONX EYEWEAR
           </span>
           <h1 className="text-4xl sm:text-6xl font-extrabold tracking-tight mt-3 mb-4 text-white">
-            Discover Your Perfect Look
-          </h1>
-          <p className="text-base sm:text-xl text-gray-100 mb-8 font-light">
             Style That Speaks You
+          </h1>
+          <p className="text-base sm:text-xl text-gray-300 mb-8 font-light">
+            Discover our exclusive collection of premium frames and sunglasses.
           </p>
           <div className="flex flex-col sm:flex-row justify-center gap-4">
             <Link
               href="/category/frame-men"
               className="bg-white text-black px-8 py-3.5 rounded-md font-medium hover:bg-gray-200 transition-colors shadow-lg"
             >
-              Shop Frames
+              Shop Men's Frames
             </Link>
             <Link
               href="/category/sunglasses-men"
