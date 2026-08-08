@@ -2,17 +2,28 @@ import Link from "next/link";
 
 export default function Home() {
   return (
-    <div className="min-h-screen bg-gray-50">
+    <div className="min-h-screen bg-white text-gray-900">
       {/* Hero Section */}
-      <section className="relative h-[75vh] flex items-center justify-center bg-black text-white px-4">
-        <div className="text-center max-w-3xl">
-          <span className="text-xs sm:text-sm uppercase tracking-widest text-gray-400 font-semibold">
+      <section className="relative h-[75vh] flex items-center justify-center text-white px-4">
+        {/* हाय-क्वालिटी बॅकग्राउंड इमेज */}
+        <img
+          src="https://images.unsplash.com/photo-1583947215259-38e31be0b53f?q=80&w=2070&auto=format&fit=crop"
+          alt="VisionX Eyewear"
+          className="absolute inset-0 w-full h-full object-cover"
+        />
+        
+        {/* डार्क ओव्हरले जेणेकरून मजकूर स्पष्ट दिसेल */}
+        <div className="absolute inset-0 bg-black/40" />
+
+        {/* टेक्स्ट कंटेंट */}
+        <div className="relative z-10 text-center max-w-3xl">
+          <span className="text-xs sm:text-sm uppercase tracking-widest text-gray-200 font-semibold">
             VISIONX EYEWEAR
           </span>
           <h1 className="text-4xl sm:text-6xl font-extrabold tracking-tight mt-3 mb-4 text-white">
             Discover Your Perfect Look
           </h1>
-          <p className="text-base sm:text-xl text-gray-300 mb-8 font-light">
+          <p className="text-base sm:text-xl text-gray-100 mb-8 font-light">
             Style That Speaks You
           </p>
           <div className="flex flex-col sm:flex-row justify-center gap-4">
@@ -33,7 +44,7 @@ export default function Home() {
       </section>
 
       {/* Categories Section */}
-      <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
+      <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 bg-white">
         <div className="text-center mb-12">
           <h2 className="text-3xl font-bold text-gray-900">Explore Collections</h2>
           <p className="text-gray-600 mt-2">Choose your vibe</p>
@@ -41,7 +52,7 @@ export default function Home() {
 
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
           {/* Frame Men */}
-          <Link href="/category/frame-men" className="group bg-white rounded-xl overflow-hidden p-8 text-center shadow-md hover:shadow-xl transition-all border border-gray-100 flex flex-col justify-between h-64">
+          <Link href="/category/frame-men" className="group bg-gray-50 rounded-xl overflow-hidden p-8 text-center shadow-sm hover:shadow-xl transition-all border border-gray-200 flex flex-col justify-between h-64">
             <div className="w-12 h-12 bg-black text-white rounded-full flex items-center justify-center mx-auto text-xl font-bold">
               👓
             </div>
@@ -52,7 +63,7 @@ export default function Home() {
           </Link>
 
           {/* Frame Women */}
-          <Link href="/category/frame-women" className="group bg-white rounded-xl overflow-hidden p-8 text-center shadow-md hover:shadow-xl transition-all border border-gray-100 flex flex-col justify-between h-64">
+          <Link href="/category/frame-women" className="group bg-gray-50 rounded-xl overflow-hidden p-8 text-center shadow-sm hover:shadow-xl transition-all border border-gray-200 flex flex-col justify-between h-64">
             <div className="w-12 h-12 bg-black text-white rounded-full flex items-center justify-center mx-auto text-xl font-bold">
               👓
             </div>
@@ -63,7 +74,7 @@ export default function Home() {
           </Link>
 
           {/* Sunglasses Men */}
-          <Link href="/category/sunglasses-men" className="group bg-white rounded-xl overflow-hidden p-8 text-center shadow-md hover:shadow-xl transition-all border border-gray-100 flex flex-col justify-between h-64">
+          <Link href="/category/sunglasses-men" className="group bg-gray-50 rounded-xl overflow-hidden p-8 text-center shadow-sm hover:shadow-xl transition-all border border-gray-200 flex flex-col justify-between h-64">
             <div className="w-12 h-12 bg-black text-white rounded-full flex items-center justify-center mx-auto text-xl font-bold">
               🕶️
             </div>
@@ -74,7 +85,7 @@ export default function Home() {
           </Link>
 
           {/* Sunglasses Women */}
-          <Link href="/category/sunglasses-women" className="group bg-white rounded-xl overflow-hidden p-8 text-center shadow-md hover:shadow-xl transition-all border border-gray-100 flex flex-col justify-between h-64">
+          <Link href="/category/sunglasses-women" className="group bg-gray-50 rounded-xl overflow-hidden p-8 text-center shadow-sm hover:shadow-xl transition-all border border-gray-200 flex flex-col justify-between h-64">
             <div className="w-12 h-12 bg-black text-white rounded-full flex items-center justify-center mx-auto text-xl font-bold">
               🕶️
             </div>
