@@ -38,14 +38,15 @@ export default function Navbar() {
 
           {/* Brand Logo */}
           <div className="flex-shrink-0">
-            <Link href="/" className="flex flex-col">
+            <Link href="/" className="flex items-center">
               <img
-              src="/images/logo.jpeg"
-              alt="VisionX Eyewear"
-             className="h-8 w-auto object-contain"
-            />
-          </Link>
-         </div>
+                src="/images/logo.jpeg"
+                alt="VisionX Eyewear"
+                className="h-8 w-auto object-contain"
+              />
+            </Link>
+          </div>
+
           {/* Desktop Navigation Links */}
           <nav className="hidden md:flex items-center space-x-8">
             <Link href="/" className="text-sm font-medium text-gray-700 hover:text-black transition-colors">
