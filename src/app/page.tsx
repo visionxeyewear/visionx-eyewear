@@ -49,12 +49,12 @@ export default function Home() {
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
           
           {/* 1. Frame Men */}
-          <Link href="/category/frame-men" className="group bg-white rounded-2xl overflow-hidden p-6 text-center shadow-sm hover:shadow-2xl transition-all duration-300 border border-gray-100 flex flex-col justify-between h-[320px]">
-            <div className="w-full h-40 overflow-hidden rounded-xl mb-4 bg-gray-100">
+          <Link href="/category/frame-men" className="group bg-white rounded-2xl overflow-hidden p-6 text-center shadow-sm hover:shadow-2xl transition-all duration-300 border border-gray-100 flex flex-col justify-between h-[340px]">
+            <div className="w-full h-44 overflow-hidden rounded-xl mb-4 bg-gray-50 flex items-center justify-center">
               <img 
                 src="/images/frame-men.PNG" 
                 alt="Frame Men Collection" 
-                className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                className="w-full h-full object-contain group-hover:scale-105 transition-transform duration-500"
               />
             </div>
             <div>
@@ -64,12 +64,12 @@ export default function Home() {
           </Link>
 
           {/* 2. Frame Women */}
-          <Link href="/category/frame-women" className="group bg-white rounded-2xl overflow-hidden p-6 text-center shadow-sm hover:shadow-2xl transition-all duration-300 border border-gray-100 flex flex-col justify-between h-[320px]">
-            <div className="w-full h-40 overflow-hidden rounded-xl mb-4 bg-gray-100">
+          <Link href="/category/frame-women" className="group bg-white rounded-2xl overflow-hidden p-6 text-center shadow-sm hover:shadow-2xl transition-all duration-300 border border-gray-100 flex flex-col justify-between h-[340px]">
+            <div className="w-full h-44 overflow-hidden rounded-xl mb-4 bg-gray-50 flex items-center justify-center">
               <img 
                 src="/images/frame-women.PNG" 
                 alt="Frame Women Collection" 
-                className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                className="w-full h-full object-contain group-hover:scale-105 transition-transform duration-500"
               />
             </div>
             <div>
@@ -79,12 +79,12 @@ export default function Home() {
           </Link>
 
           {/* 3. Sunglasses Men */}
-          <Link href="/category/sunglasses-men" className="group bg-white rounded-2xl overflow-hidden p-6 text-center shadow-sm hover:shadow-2xl transition-all duration-300 border border-gray-100 flex flex-col justify-between h-[320px]">
-            <div className="w-full h-40 overflow-hidden rounded-xl mb-4 bg-gray-100">
+          <Link href="/category/sunglasses-men" className="group bg-white rounded-2xl overflow-hidden p-6 text-center shadow-sm hover:shadow-2xl transition-all duration-300 border border-gray-100 flex flex-col justify-between h-[340px]">
+            <div className="w-full h-44 overflow-hidden rounded-xl mb-4 bg-gray-50 flex items-center justify-center">
               <img 
                 src="/images/sunglasses-men.PNG" 
                 alt="Sunglasses Men Collection" 
-                className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                className="w-full h-full object-contain group-hover:scale-105 transition-transform duration-500"
               />
             </div>
             <div>
@@ -94,12 +94,12 @@ export default function Home() {
           </Link>
 
           {/* 4. Sunglasses Women */}
-          <Link href="/category/sunglasses-women" className="group bg-white rounded-2xl overflow-hidden p-6 text-center shadow-sm hover:shadow-2xl transition-all duration-300 border border-gray-100 flex flex-col justify-between h-[320px]">
-            <div className="w-full h-40 overflow-hidden rounded-xl mb-4 bg-gray-100">
+          <Link href="/category/sunglasses-women" className="group bg-white rounded-2xl overflow-hidden p-6 text-center shadow-sm hover:shadow-2xl transition-all duration-300 border border-gray-100 flex flex-col justify-between h-[340px]">
+            <div className="w-full h-44 overflow-hidden rounded-xl mb-4 bg-gray-50 flex items-center justify-center">
               <img 
                 src="/images/sunglasses-women.PNG" 
                 alt="Sunglasses Women Collection" 
-                className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                className="w-full h-full object-contain group-hover:scale-105 transition-transform duration-500"
               />
             </div>
             <div>
