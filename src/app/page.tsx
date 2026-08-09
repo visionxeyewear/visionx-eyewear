@@ -52,7 +52,7 @@ export default function Home() {
           <Link href="/category/frame-men" className="group bg-white rounded-2xl overflow-hidden p-6 text-center shadow-sm hover:shadow-2xl transition-all duration-300 border border-gray-100 flex flex-col justify-between h-[320px]">
             <div className="w-full h-40 overflow-hidden rounded-xl mb-4 bg-gray-100">
               <img 
-                src="/images/frame-men.png" 
+                src="/images/frame-men.PNG" 
                 alt="Frame Men Collection" 
                 className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
               />
@@ -67,7 +67,7 @@ export default function Home() {
           <Link href="/category/frame-women" className="group bg-white rounded-2xl overflow-hidden p-6 text-center shadow-sm hover:shadow-2xl transition-all duration-300 border border-gray-100 flex flex-col justify-between h-[320px]">
             <div className="w-full h-40 overflow-hidden rounded-xl mb-4 bg-gray-100">
               <img 
-                src="/images/frame-women.png" 
+                src="/images/frame-women.PNG" 
                 alt="Frame Women Collection" 
                 className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
               />
@@ -82,7 +82,7 @@ export default function Home() {
           <Link href="/category/sunglasses-men" className="group bg-white rounded-2xl overflow-hidden p-6 text-center shadow-sm hover:shadow-2xl transition-all duration-300 border border-gray-100 flex flex-col justify-between h-[320px]">
             <div className="w-full h-40 overflow-hidden rounded-xl mb-4 bg-gray-100">
               <img 
-                src="/images/sunglasses-men.png" 
+                src="/images/sunglasses-men.PNG" 
                 alt="Sunglasses Men Collection" 
                 className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
               />
@@ -97,7 +97,7 @@ export default function Home() {
           <Link href="/category/sunglasses-women" className="group bg-white rounded-2xl overflow-hidden p-6 text-center shadow-sm hover:shadow-2xl transition-all duration-300 border border-gray-100 flex flex-col justify-between h-[320px]">
             <div className="w-full h-40 overflow-hidden rounded-xl mb-4 bg-gray-100">
               <img 
-                src="/images/sunglasses-women.png" 
+                src="/images/sunglasses-women.PNG" 
                 alt="Sunglasses Women Collection" 
                 className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
               />
