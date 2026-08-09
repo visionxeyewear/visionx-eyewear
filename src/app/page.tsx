@@ -3,7 +3,7 @@ import Link from "next/link";
 export default function Home() {
   return (
     <div className="min-h-screen bg-white text-gray-900">
-      {/* Hero Section - योग्य मध्यम साईज (h-[60vh]) */}
+      {/* Hero Section */}
       <section 
         className="relative h-[60vh] flex items-center justify-center text-white px-4 bg-cover bg-center"
         style={{ backgroundImage: `url('/images/banner.jpg')` }}
@@ -47,37 +47,67 @@ export default function Home() {
         </div>
 
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
-          <Link href="/category/frame-men" className="group bg-gray-50 rounded-xl overflow-hidden p-8 text-center shadow-sm hover:shadow-xl transition-all border border-gray-200 flex flex-col justify-between h-64">
-            <div className="w-12 h-12 bg-black text-white rounded-full flex items-center justify-center mx-auto text-xl font-bold">👓</div>
+          
+          {/* 1. Frame Men */}
+          <Link href="/category/frame-men" className="group bg-white rounded-2xl overflow-hidden p-6 text-center shadow-sm hover:shadow-2xl transition-all duration-300 border border-gray-100 flex flex-col justify-between h-[320px]">
+            <div className="w-full h-40 overflow-hidden rounded-xl mb-4 bg-gray-100">
+              <img 
+                src="/images/frame-men.png" 
+                alt="Frame Men Collection" 
+                className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+              />
+            </div>
             <div>
-              <h3 className="text-xl font-bold text-gray-900 group-hover:text-blue-600 transition-colors">Frame Men</h3>
+              <h3 className="text-xl font-bold text-gray-950 group-hover:text-blue-700 transition-colors">Frame Men</h3>
               <p className="text-sm text-gray-500 mt-1">Explore Collection &rarr;</p>
             </div>
           </Link>
 
-          <Link href="/category/frame-women" className="group bg-gray-50 rounded-xl overflow-hidden p-8 text-center shadow-sm hover:shadow-xl transition-all border border-gray-200 flex flex-col justify-between h-64">
-            <div className="w-12 h-12 bg-black text-white rounded-full flex items-center justify-center mx-auto text-xl font-bold">👓</div>
+          {/* 2. Frame Women */}
+          <Link href="/category/frame-women" className="group bg-white rounded-2xl overflow-hidden p-6 text-center shadow-sm hover:shadow-2xl transition-all duration-300 border border-gray-100 flex flex-col justify-between h-[320px]">
+            <div className="w-full h-40 overflow-hidden rounded-xl mb-4 bg-gray-100">
+              <img 
+                src="/images/frame-women.png" 
+                alt="Frame Women Collection" 
+                className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+              />
+            </div>
             <div>
-              <h3 className="text-xl font-bold text-gray-900 group-hover:text-blue-600 transition-colors">Frame Women</h3>
+              <h3 className="text-xl font-bold text-gray-950 group-hover:text-blue-700 transition-colors">Frame Women</h3>
               <p className="text-sm text-gray-500 mt-1">Explore Collection &rarr;</p>
             </div>
           </Link>
 
-          <Link href="/category/sunglasses-men" className="group bg-gray-50 rounded-xl overflow-hidden p-8 text-center shadow-sm hover:shadow-xl transition-all border border-gray-200 flex flex-col justify-between h-64">
-            <div className="w-12 h-12 bg-black text-white rounded-full flex items-center justify-center mx-auto text-xl font-bold">🕶️</div>
+          {/* 3. Sunglasses Men */}
+          <Link href="/category/sunglasses-men" className="group bg-white rounded-2xl overflow-hidden p-6 text-center shadow-sm hover:shadow-2xl transition-all duration-300 border border-gray-100 flex flex-col justify-between h-[320px]">
+            <div className="w-full h-40 overflow-hidden rounded-xl mb-4 bg-gray-100">
+              <img 
+                src="/images/sunglasses-men.png" 
+                alt="Sunglasses Men Collection" 
+                className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+              />
+            </div>
             <div>
-              <h3 className="text-xl font-bold text-gray-900 group-hover:text-blue-600 transition-colors">Sunglasses Men</h3>
+              <h3 className="text-xl font-bold text-gray-950 group-hover:text-blue-700 transition-colors">Sunglasses Men</h3>
               <p className="text-sm text-gray-500 mt-1">Explore Collection &rarr;</p>
             </div>
           </Link>
 
-          <Link href="/category/sunglasses-women" className="group bg-gray-50 rounded-xl overflow-hidden p-8 text-center shadow-sm hover:shadow-xl transition-all border border-gray-200 flex flex-col justify-between h-64">
-            <div className="w-12 h-12 bg-black text-white rounded-full flex items-center justify-center mx-auto text-xl font-bold">🕶️</div>
+          {/* 4. Sunglasses Women */}
+          <Link href="/category/sunglasses-women" className="group bg-white rounded-2xl overflow-hidden p-6 text-center shadow-sm hover:shadow-2xl transition-all duration-300 border border-gray-100 flex flex-col justify-between h-[320px]">
+            <div className="w-full h-40 overflow-hidden rounded-xl mb-4 bg-gray-100">
+              <img 
+                src="/images/sunglasses-women.png" 
+                alt="Sunglasses Women Collection" 
+                className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+              />
+            </div>
             <div>
-              <h3 className="text-xl font-bold text-gray-900 group-hover:text-blue-600 transition-colors">Sunglasses Women</h3>
+              <h3 className="text-xl font-bold text-gray-950 group-hover:text-blue-700 transition-colors">Sunglasses Women</h3>
               <p className="text-sm text-gray-500 mt-1">Explore Collection &rarr;</p>
             </div>
           </Link>
+
         </div>
       </section>
     </div>
