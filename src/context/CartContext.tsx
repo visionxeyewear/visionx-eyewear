@@ -20,19 +20,17 @@ const CartContext = createContext<CartContextType | undefined>(undefined);
 export function CartProvider({ children }: { children: React.ReactNode }) {
   const [cart, setCart] = useState<CartItem[]>([]);
 
-  // Load cart from LocalStorage on initial load
   useEffect(() => {
     const savedCart = localStorage.getItem("visionx_cart");
     if (savedCart) {
       try {
         setCart(JSON.parse(savedCart));
       } catch (e) {
-        console.error(e);
+        console.error("Failed to parse cart", e);
       }
     }
   }, []);
 
-  // Save cart to LocalStorage whenever cart updates
   useEffect(() => {
     localStorage.setItem("visionx_cart", JSON.stringify(cart));
   }, [cart]);
