@@ -1,7 +1,7 @@
 import Link from "next/link";
 
 interface Product {
-  id: number;
+  id: string;
   name: string;
   price: number;
   originalPrice?: number;
@@ -11,7 +11,7 @@ interface Product {
 
 const products: Product[] = [
   {
-    id: 1,
+    id: "1",
     name: "David Jones Sunglasses (Model: 0025/105)",
     price: 6299,
     originalPrice: 8700,
@@ -19,7 +19,7 @@ const products: Product[] = [
     tag: "NEW"
   },
   {
-    id: 2,
+    id: "2",
     name: "Rayban (Model: 3025 001/58)",
     price: 9399,
     originalPrice: 10990,
@@ -35,9 +35,11 @@ export default function SunglassesMenPage() {
         <h1 className="text-3xl font-bold text-gray-900 mb-2">Sunglasses Men</h1>
         <p className="text-gray-600 mb-8">Explore our finely curated range of sunglasses men.</p>
 
-        <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
-          {/* Filters Sidebar */}
-          <div className="md:col-span-1 border-r border-gray-200 pr-6">
+        {/* Flex layout for mobile: Products first, Filters second */}
+        <div className="flex flex-col-reverse md:grid md:grid-cols-4 gap-8">
+          
+          {/* Filters Sidebar (Appears below products on mobile, left side on desktop) */}
+          <div className="md:col-span-1 border-t md:border-t-0 md:border-r border-gray-200 pt-6 md:pt-0 md:pr-6">
             <h3 className="font-bold text-lg mb-4">FILTERS</h3>
             <div className="space-y-6 text-sm">
               <div>
@@ -83,7 +85,7 @@ export default function SunglassesMenPage() {
               {products.map((product) => (
                 <div key={product.id} className="bg-white rounded-xl p-4 border border-gray-200 group shadow-sm hover:shadow-md transition-shadow flex flex-col justify-between">
                   <div>
-                    <div className="relative aspect-square w-full overflow-hidden rounded-lg mb-4 bg-gray-50">
+                    <Link href={`/product/${product.id}`} className="block relative aspect-square w-full overflow-hidden rounded-lg mb-4 bg-gray-50">
                       {product.tag && (
                         <span className="absolute top-2 left-2 z-10 bg-black text-white text-[10px] font-bold px-2 py-1 rounded-sm tracking-wider">
                           {product.tag}
@@ -94,10 +96,12 @@ export default function SunglassesMenPage() {
                         alt={product.name} 
                         className="h-full w-full object-contain group-hover:scale-105 transition-transform duration-300" 
                       />
-                    </div>
+                    </Link>
 
                     <p className="text-[11px] text-gray-500 uppercase tracking-wider mb-1">SUNGLASSES MEN</p>
-                    <h4 className="text-sm font-semibold text-gray-900 mb-2">{product.name}</h4>
+                    <Link href={`/product/${product.id}`}>
+                      <h4 className="text-sm font-semibold text-gray-900 mb-2 hover:underline">{product.name}</h4>
+                    </Link>
 
                     <div className="flex items-center gap-2 mb-4">
                       <span className="text-base font-bold text-gray-950">
@@ -111,7 +115,7 @@ export default function SunglassesMenPage() {
                     </div>
                   </div>
 
-                  {/* Buttons: View Product & Add to Cart */}
+                  {/* Buttons */}
                   <div className="grid grid-cols-2 gap-2 mt-2">
                     <Link 
                       href={`/product/${product.id}`}
@@ -130,6 +134,7 @@ export default function SunglassesMenPage() {
               ))}
             </div>
           </div>
+
         </div>
       </div>
     </div>
