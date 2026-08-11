@@ -31,18 +31,26 @@ const featuredProducts: Product[] = [
 export default function Home() {
   return (
     <div className="min-h-screen bg-white text-gray-900">
-      {/* Hero Section */}
-      <section className="bg-gray-50 py-16 px-4 text-center">
-        <h1 className="text-4xl font-bold tracking-tight mb-4">VisionX Eyewear</h1>
-        <p className="text-gray-600 max-w-xl mx-auto mb-8">
-          Precision in Every Lens. Elevating your vision with sophisticated designer eyewear.
-        </p>
-        <Link 
-          href="/category/sunglasses-men" 
-          className="bg-black text-white px-8 py-3 rounded-md font-semibold text-sm hover:bg-gray-800 transition-colors"
-        >
-          Explore Collection
-        </Link>
+      
+      {/* Hero Banner / Poster Section */}
+      <section className="relative bg-gray-900 text-white py-24 px-4 text-center overflow-hidden">
+        {/* जर तुमच्याकडे बॅनरचा फोटो असेल तर backgroundImage मध्ये टाका किंवा खालीलप्रमाणे डिझाईन वापरू शकता */}
+        <div className="absolute inset-0 opacity-40 bg-cover bg-center" style={{ backgroundImage: "url('/images/1.jpeg')" }}></div>
+        <div className="absolute inset-0 bg-black/60"></div>
+        
+        <div className="relative max-w-3xl mx-auto z-10">
+          <span className="text-xs uppercase tracking-widest bg-white/20 px-3 py-1 rounded-full mb-4 inline-block">New Collection 2026</span>
+          <h1 className="text-4xl sm:text-5xl font-extrabold tracking-tight mb-4">VisionX Eyewear</h1>
+          <p className="text-gray-300 text-base sm:text-lg mb-8">
+            Precision in Every Lens. Elevating your vision with sophisticated designer eyewear.
+          </p>
+          <Link 
+            href="/category/sunglasses-men" 
+            className="bg-white text-black px-8 py-3 rounded-md font-bold text-sm hover:bg-gray-200 transition-colors shadow-lg inline-block"
+          >
+            Explore Collection
+          </Link>
+        </div>
       </section>
 
       {/* Featured Products Section */}
