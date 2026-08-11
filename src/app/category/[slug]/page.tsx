@@ -1,7 +1,4 @@
-'use client';
-
 import Link from "next/link";
-import { useState } from "react";
 
 interface Product {
   id: number;
@@ -32,8 +29,6 @@ const products: Product[] = [
 ];
 
 export default function SunglassesMenPage() {
-  const [maxPrice, setMaxPrice] = useState<number>(15000);
-
   return (
     <div className="min-h-screen bg-white text-gray-900 py-10 px-4 sm:px-6 lg:px-8">
       <div className="max-w-7xl mx-auto">
@@ -46,14 +41,12 @@ export default function SunglassesMenPage() {
             <h3 className="font-bold text-lg mb-4">FILTERS</h3>
             <div className="space-y-6 text-sm">
               <div>
-                <label className="font-medium block mb-2">MAX PRICE: ₹{maxPrice}</label>
+                <label className="font-medium block mb-2">MAX PRICE: ₹15000</label>
                 <input 
                   type="range" 
                   min="500" 
                   max="15000" 
-                  step="500"
-                  value={maxPrice} 
-                  onChange={(e) => setMaxPrice(Number(e.target.value))}
+                  defaultValue="15000"
                   className="w-full accent-black cursor-pointer" 
                 />
               </div>
@@ -126,12 +119,12 @@ export default function SunglassesMenPage() {
                     >
                       View Product
                     </Link>
-                    <button 
-                      onClick={() => alert(`${product.name} added to cart!`)}
-                      className="bg-gray-950 text-white py-2 px-2 rounded-md text-xs font-semibold hover:bg-gray-800 transition-colors text-center"
+                    <Link 
+                      href="/cart"
+                      className="bg-gray-950 text-white py-2 px-2 rounded-md text-xs font-semibold hover:bg-gray-800 transition-colors text-center flex items-center justify-center"
                     >
                       Add to Cart
-                    </button>
+                    </Link>
                   </div>
                 </div>
               ))}
