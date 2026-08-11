@@ -1,160 +1,55 @@
-"use client";
+import Link from "next/link";
 
-import { useParams, useRouter } from "next/navigation";
-import { products, Product } from "@/data/products";
-import { useCart } from "@/context/CartContext";
-import { useState } from "react";
-import { Heart, ShieldCheck, Truck, RotateCcw } from "lucide-react";
+interface Product {
+  id: string;
+  name: string;
+  price: number;
+  originalPrice: number;
+  image: string;
+  category: string;
+}
 
-export default function ProductDetailPage() {
-  const params = useParams();
-  const id = params?.id as string;
-  const router = useRouter();
-  const { addToCart } = useCart();
+const allProducts: Product[] = [
+  { id: "1", name: "David Jones Sunglasses (Model: 0025/105)", price: 6299, originalPrice: 8700, image: "/images/1.jpeg", category: "Sunglasses Men" },
+  { id: "2", name: "Rayban (Model: 3025 001/58)", price: 9399, originalPrice: 10990, image: "/images/2.jpeg", category: "Sunglasses Men" },
+  { id: "3", name: "Classic Men Frame 01", price: 3499, originalPrice: 4999, image: "/images/frame-men.PNG", category: "Frame Men" },
+  { id: "4", name: "Classic Women Frame 01", price: 3499, originalPrice: 4999, image: "/images/frame-women.PNG", category: "Frame Women" },
+  { id: "5", name: "Classic Women Sunglasses 01", price: 4499, originalPrice: 6999, image: "/images/sunglasses-women.PNG", category: "Sunglasses Women" }
+];
 
-  const product = products.find((p) => p.id === id);
-
-  const [quantity, setQuantity] = useState(1);
-  const [isWishlisted, setIsWishlisted] = useState(false);
-  const [addedMessage, setAddedMessage] = useState(false);
+export default function ProductDetailPage({ params }: { params: { id: string } }) {
+  const product = allProducts.find((p) => p.id === params.id);
 
   if (!product) {
     return (
-      <div className="py-32 text-center">
-        <h2 className="text-2xl font-bold">Product not found</h2>
-        <button onClick={() => router.push("/")} className="mt-4 bg-black text-white px-6 py-2 rounded text-sm">
+      <div className="min-h-screen flex flex-col items-center justify-center bg-white text-gray-900">
+        <h2 className="text-2xl font-bold mb-4">Product not found</h2>
+        <Link href="/" className="bg-black text-white px-6 py-2 rounded-md text-sm">
           Back to Home
-        </button>
+        </Link>
       </div>
     );
   }
 
-  const handleAddToCart = () => {
-    addToCart(product, quantity);
-    setAddedMessage(true);
-    setTimeout(() => setAddedMessage(false), 2500);
-  };
-
-  const handleBuyNow = () => {
-    addToCart(product, quantity);
-    router.push("/cart");
-  };
-
   return (
-    <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
-      <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-start">
-        
-        {/* Product Image Gallery */}
-        <div className="bg-gray-100 rounded-lg overflow-hidden aspect-[4/3] relative shadow-sm">
-          <img
-            src={product.image}
-            alt={product.name}
-            className="w-full h-full object-cover"
-          />
-          <button
-            onClick={() => setIsWishlisted(!isWishlisted)}
-            className="absolute top-4 right-4 p-3 bg-white/80 backdrop-blur-sm rounded-full text-gray-700 hover:text-black transition-colors"
-          >
-            <Heart size={20} className={isWishlisted ? "fill-black text-black" : ""} />
-          </button>
+    <div className="min-h-screen bg-white py-12 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto">
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-10">
+        <div className="bg-gray-50 p-4 rounded-xl flex items-center justify-center border border-gray-100">
+          <img src={product.image} alt={product.name} className="max-h-[450px] object-contain" />
         </div>
-
-        {/* Product Details */}
-        <div className="space-y-6">
-          <div>
-            <span className="text-xs uppercase tracking-widest text-gray-500 font-semibold">{product.categoryName}</span>
-            <h1 className="text-3xl font-bold text-gray-900 mt-1">{product.name}</h1>
+        <div>
+          <span className="text-xs uppercase tracking-wider text-gray-500">{product.category}</span>
+          <h1 className="text-2xl sm:text-3xl font-bold text-gray-900 mt-1 mb-4">{product.name}</h1>
+          <div className="flex items-center gap-3 mb-6">
+            <span className="text-2xl font-bold text-gray-950">₹{product.price.toLocaleString('en-IN')}</span>
+            <span className="text-sm text-gray-500 line-through">₹{product.originalPrice.toLocaleString('en-IN')}</span>
           </div>
-
-          <div className="flex items-center space-x-3">
-            <span className="text-2xl font-bold text-gray-900">₹{product.salePrice ?? product.price}</span>
-            {product.salePrice && (
-              <span className="text-base text-gray-400 line-through">₹{product.price}</span>
-            )}
-          </div>
-
-          <p className="text-gray-600 leading-relaxed text-sm">{product.description}</p>
-
-          {/* Specifications */}
-          <div className="border-t border-b border-gray-200 py-4 grid grid-cols-2 gap-4 text-sm">
-            <div>
-              <span className="text-gray-500 block">Frame Shape</span>
-              <span className="font-semibold text-gray-900">{product.shape}</span>
-            </div>
-            <div>
-              <span className="text-gray-500 block">Frame Material</span>
-              <span className="font-semibold text-gray-900">{product.material}</span>
-            </div>
-            <div>
-              <span className="text-gray-500 block">Color</span>
-              <span className="font-semibold text-gray-900">{product.color}</span>
-            </div>
-            <div>
-              <span className="text-gray-500 block">Size</span>
-              <span className="font-semibold text-gray-900">{product.size}</span>
-            </div>
-          </div>
-
-          {/* Quantity Selector */}
-          <div className="flex items-center space-x-4">
-            <span className="text-sm font-semibold uppercase text-gray-700">Quantity</span>
-            <div className="flex items-center border border-gray-300 rounded-md">
-              <button
-                onClick={() => setQuantity(Math.max(1, quantity - 1))}
-                className="px-3 py-1 text-lg font-medium text-gray-600 hover:bg-gray-100"
-              >
-                -
-              </button>
-              <span className="px-4 py-1 text-sm font-semibold text-gray-900">{quantity}</span>
-              <button
-                onClick={() => setQuantity(quantity + 1)}
-                className="px-3 py-1 text-lg font-medium text-gray-600 hover:bg-gray-100"
-              >
-                +
-              </button>
-            </div>
-          </div>
-
-          {/* Action Buttons */}
-          <div className="flex flex-col sm:flex-row gap-4 pt-4">
-            <button
-              onClick={handleAddToCart}
-              className="flex-1 bg-black text-white py-3.5 px-6 rounded-md font-medium text-sm hover:bg-gray-800 transition-colors shadow-sm"
-            >
+          <div className="flex gap-4">
+            <Link href="/cart" className="flex-1 bg-black text-white py-3 rounded-lg text-center font-semibold text-sm hover:bg-gray-800 transition-colors">
               Add to Cart
-            </button>
-            <button
-              onClick={handleBuyNow}
-              className="flex-1 bg-gray-100 text-gray-900 py-3.5 px-6 rounded-md font-medium text-sm hover:bg-gray-200 transition-colors"
-            >
-              Buy Now
-            </button>
+            </Link>
           </div>
-
-          {addedMessage && (
-            <div className="p-3 bg-green-50 text-green-800 text-xs rounded font-medium text-center animate-fadeIn">
-              Successfully added to cart!
-            </div>
-          )}
-
-          {/* Value Props */}
-          <div className="pt-6 border-t border-gray-100 grid grid-cols-3 gap-4 text-center text-xs text-gray-600">
-            <div className="flex flex-col items-center space-y-1">
-              <ShieldCheck size={20} className="text-gray-800" />
-              <span>1 Year Warranty</span>
-            </div>
-            <div className="flex flex-col items-center space-y-1">
-              <Truck size={20} className="text-gray-800" />
-              <span>Free Shipping</span>
-            </div>
-            <div className="flex flex-col items-center space-y-1">
-              <RotateCcw size={20} className="text-gray-800" />
-              <span>Easy Returns</span>
-            </div>
-          </div>
-
         </div>
-
       </div>
     </div>
   );
