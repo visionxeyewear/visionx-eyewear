@@ -1,4 +1,5 @@
 import { CartProvider } from "@/context/CartContext";
+import Navbar from "@/components/Navbar";
 import "./globals.css";
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
@@ -6,6 +7,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
     <html lang="en">
       <body>
         <CartProvider>
+          <Navbar />
           {children}
         </CartProvider>
       </body>
