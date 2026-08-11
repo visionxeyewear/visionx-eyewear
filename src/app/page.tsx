@@ -1,4 +1,7 @@
+"use client";
 import Link from "next/link";
+import { useCart } from "@/context/CartContext";
+import { useRouter } from "next/navigation";
 
 interface Product {
   id: string;
@@ -29,12 +32,24 @@ const featuredProducts: Product[] = [
 ];
 
 export default function Home() {
+  const { addToCart } = useCart();
+  const router = useRouter();
+
+  const handleAddToCart = (product: Product) => {
+    addToCart({
+      id: product.id,
+      name: product.name,
+      price: product.price,
+      image: product.image,
+    });
+    router.push("/cart");
+  };
+
   return (
     <div className="min-h-screen bg-white text-gray-900">
       
       {/* Hero Section with Background Video */}
       <section className="relative bg-gray-900 text-white py-28 px-4 text-center overflow-hidden flex items-center justify-center min-h-[500px]">
-        {/* Background Video - POSTERV.mp4 */}
         <video 
           autoPlay 
           loop 
@@ -46,7 +61,6 @@ export default function Home() {
           Your browser does not support the video tag.
         </video>
         
-        {/* Dark Overlay */}
         <div className="absolute inset-0 bg-black/55"></div>
         
         <div className="relative max-w-3xl mx-auto z-10">
@@ -112,12 +126,12 @@ export default function Home() {
                 >
                   View Product
                 </Link>
-                <Link 
-                  href="/cart"
+                <button 
+                  onClick={() => handleAddToCart(product)}
                   className="bg-gray-950 text-white py-2 px-2 rounded-md text-xs font-semibold hover:bg-gray-800 transition-colors text-center flex items-center justify-center"
                 >
                   Add to Cart
-                </Link>
+                </button>
               </div>
             </div>
           ))}
