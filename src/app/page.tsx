@@ -80,7 +80,7 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Explore Collections Section (Brought back here) */}
+      {/* Explore Collections Section with exact image file names */}
       <section className="max-w-7xl mx-auto py-16 px-4 sm:px-6 lg:px-8 text-center">
         <h2 className="text-3xl font-extrabold text-gray-900 tracking-tight">Explore Collections</h2>
         <p className="text-gray-500 mt-1 mb-10 text-sm">Choose your vibe</p>
@@ -90,7 +90,7 @@ export default function Home() {
           {/* Frame Men */}
           <Link href="/category/frame-men" className="group bg-white border border-gray-200 rounded-2xl p-4 shadow-sm hover:shadow-md transition-all">
             <div className="aspect-square w-full overflow-hidden rounded-xl bg-gray-100 mb-4">
-              <img src="/images/1.jpeg" alt="Frame Men" className="h-full w-full object-cover group-hover:scale-105 transition-transform duration-300" />
+              <img src="/images/frame-men.PNG" alt="Frame Men" className="h-full w-full object-cover group-hover:scale-105 transition-transform duration-300" />
             </div>
             <h3 className="text-base font-bold text-gray-900">Frame Men</h3>
             <p className="text-xs text-gray-500 mt-1">Explore Collection →</p>
@@ -99,7 +99,7 @@ export default function Home() {
           {/* Frame Women */}
           <Link href="/category/frame-women" className="group bg-white border border-gray-200 rounded-2xl p-4 shadow-sm hover:shadow-md transition-all">
             <div className="aspect-square w-full overflow-hidden rounded-xl bg-gray-100 mb-4">
-              <img src="/images/2.jpeg" alt="Frame Women" className="h-full w-full object-cover group-hover:scale-105 transition-transform duration-300" />
+              <img src="/images/frame-women.PNG" alt="Frame Women" className="h-full w-full object-cover group-hover:scale-105 transition-transform duration-300" />
             </div>
             <h3 className="text-base font-bold text-gray-900">Frame Women</h3>
             <p className="text-xs text-gray-500 mt-1">Explore Collection →</p>
@@ -108,7 +108,7 @@ export default function Home() {
           {/* Sunglasses Men */}
           <Link href="/category/sunglasses-men" className="group bg-white border border-gray-200 rounded-2xl p-4 shadow-sm hover:shadow-md transition-all">
             <div className="aspect-square w-full overflow-hidden rounded-xl bg-gray-100 mb-4">
-              <img src="/images/1.jpeg" alt="Sunglasses Men" className="h-full w-full object-cover group-hover:scale-105 transition-transform duration-300" />
+              <img src="/images/sunglasses-men.PNG" alt="Sunglasses Men" className="h-full w-full object-cover group-hover:scale-105 transition-transform duration-300" />
             </div>
             <h3 className="text-base font-bold text-gray-900">Sunglasses Men</h3>
             <p className="text-xs text-gray-500 mt-1">Explore Collection →</p>
@@ -117,7 +117,7 @@ export default function Home() {
           {/* Sunglasses Women */}
           <Link href="/category/sunglasses-women" className="group bg-white border border-gray-200 rounded-2xl p-4 shadow-sm hover:shadow-md transition-all">
             <div className="aspect-square w-full overflow-hidden rounded-xl bg-gray-100 mb-4">
-              <img src="/images/2.jpeg" alt="Sunglasses Women" className="h-full w-full object-cover group-hover:scale-105 transition-transform duration-300" />
+              <img src="/images/sunglasses-women.PNG" alt="Sunglasses Women" className="h-full w-full object-cover group-hover:scale-105 transition-transform duration-300" />
             </div>
             <h3 className="text-base font-bold text-gray-900">Sunglasses Women</h3>
             <p className="text-xs text-gray-500 mt-1">Explore Collection →</p>
