@@ -78,5 +78,4 @@ export const allProducts: Product[] = [
   { id: "sw-15", name: "Classic Black Chic Sunglasses", price: 999, originalPrice: 1899, image: "/images/1.jpeg", category: "sunglasses-women" },
 ];
 
-// Alias export to satisfy search page import
 export const products = allProducts;
