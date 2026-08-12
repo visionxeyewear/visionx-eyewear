@@ -17,19 +17,25 @@ export default function Navbar() {
         </Link>
 
         {/* Desktop Menu Options */}
-        <div className="hidden md:flex items-center space-x-8 text-sm font-medium text-gray-700">
+        <div className="hidden lg:flex items-center space-x-6 text-sm font-medium text-gray-700">
           <Link href="/" className="hover:text-black transition-colors">
             Home
           </Link>
-          <Link href="/category/sunglasses" className="hover:text-black transition-colors">
-            Sunglasses
+          <Link href="/category/frame-men" className="hover:text-black transition-colors">
+            Frame Men
           </Link>
-          <Link href="/category/frames" className="hover:text-black transition-colors">
-            Frames
+          <Link href="/category/frame-women" className="hover:text-black transition-colors">
+            Frame Women
+          </Link>
+          <Link href="/category/sunglasses-men" className="hover:text-black transition-colors">
+            Sunglasses Men
+          </Link>
+          <Link href="/category/sunglasses-women" className="hover:text-black transition-colors">
+            Sunglasses Women
           </Link>
         </div>
 
-        {/* Right Side: Cart Icon */}
+        {/* Right Side: Cart Icon & Mobile Menu Toggle */}
         <div className="flex items-center space-x-4">
           <Link href="/cart" className="relative flex items-center text-gray-700 hover:text-black">
             <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
@@ -45,7 +51,7 @@ export default function Navbar() {
           {/* Mobile Hamburger Menu Button */}
           <button 
             onClick={() => setIsOpen(!isOpen)} 
-            className="md:hidden text-gray-700 focus:outline-none"
+            className="lg:hidden text-gray-700 focus:outline-none"
           >
             <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
               {isOpen ? (
@@ -60,7 +66,7 @@ export default function Navbar() {
 
       {/* Mobile Dropdown Menu */}
       {isOpen && (
-        <div className="md:hidden bg-white border-b px-4 pt-2 pb-4 space-y-3">
+        <div className="lg:hidden bg-white border-b px-4 pt-2 pb-4 space-y-3">
           <Link 
             href="/" 
             onClick={() => setIsOpen(false)}
@@ -69,18 +75,32 @@ export default function Navbar() {
             Home
           </Link>
           <Link 
-            href="/category/sunglasses" 
+            href="/category/frame-men" 
             onClick={() => setIsOpen(false)}
             className="block text-gray-700 font-medium hover:text-black"
           >
-            Sunglasses
+            Frame Men
           </Link>
           <Link 
-            href="/category/frames" 
+            href="/category/frame-women" 
             onClick={() => setIsOpen(false)}
             className="block text-gray-700 font-medium hover:text-black"
           >
-            Frames
+            Frame Women
+          </Link>
+          <Link 
+            href="/category/sunglasses-men" 
+            onClick={() => setIsOpen(false)}
+            className="block text-gray-700 font-medium hover:text-black"
+          >
+            Sunglasses Men
+          </Link>
+          <Link 
+            href="/category/sunglasses-women" 
+            onClick={() => setIsOpen(false)}
+            className="block text-gray-700 font-medium hover:text-black"
+          >
+            Sunglasses Women
           </Link>
         </div>
       )}
