@@ -1,54 +1,59 @@
-import Link from "next/link";
+"use client";
+import { useParams, useRouter } from "next/navigation";
+import { allProducts } from "@/data/products";
+import { useCart } from "@/context/CartContext";
 
-interface Product {
-  id: string;
-  name: string;
-  price: number;
-  originalPrice: number;
-  image: string;
-  category: string;
-}
+export default function ProductDetailPage() {
+  const params = useParams();
+  const router = useRouter();
+  const { addToCart } = useCart();
 
-const allProducts: Product[] = [
-  { id: "1", name: "David Jones Sunglasses (Model: 0025/105)", price: 6299, originalPrice: 8700, image: "/images/1.jpeg", category: "Sunglasses Men" },
-  { id: "2", name: "Rayban (Model: 3025 001/58)", price: 9399, originalPrice: 10990, image: "/images/2.jpeg", category: "Sunglasses Men" },
-  { id: "3", name: "Classic Men Frame 01", price: 3499, originalPrice: 4999, image: "/images/frame-men.PNG", category: "Frame Men" },
-  { id: "4", name: "Classic Women Frame 01", price: 3499, originalPrice: 4999, image: "/images/frame-women.PNG", category: "Frame Women" },
-  { id: "5", name: "Classic Women Sunglasses 01", price: 4499, originalPrice: 6999, image: "/images/sunglasses-women.PNG", category: "Sunglasses Women" }
-];
-
-export default function ProductDetailPage({ params }: { params: { id: string } }) {
   const product = allProducts.find((p) => p.id === params.id);
 
   if (!product) {
     return (
-      <div className="min-h-screen flex flex-col items-center justify-center bg-white text-gray-900">
+      <div className="min-h-[60vh] flex flex-col items-center justify-center">
         <h2 className="text-2xl font-bold mb-4">Product not found</h2>
-        <Link href="/" className="bg-black text-white px-6 py-2 rounded-md text-sm">
+        <button onClick={() => router.push("/")} className="bg-black text-white px-6 py-2 rounded">
           Back to Home
-        </Link>
+        </button>
       </div>
     );
   }
 
+  const handleAddToCart = () => {
+    addToCart(product);
+    router.push("/cart");
+  };
+
   return (
-    <div className="min-h-screen bg-white py-12 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto">
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-10">
-        <div className="bg-gray-50 p-4 rounded-xl flex items-center justify-center border border-gray-100">
-          <img src={product.image} alt={product.name} className="max-h-[450px] object-contain" />
+    <div className="max-w-6xl mx-auto px-4 py-12">
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
+        <div className="bg-gray-50 rounded-2xl p-4 border aspect-square flex items-center justify-center">
+          <img src={product.image} alt={product.name} className="max-h-full object-contain" />
         </div>
+
         <div>
-          <span className="text-xs uppercase tracking-wider text-gray-500">{product.category}</span>
-          <h1 className="text-2xl sm:text-3xl font-bold text-gray-900 mt-1 mb-4">{product.name}</h1>
+          <span className="text-xs font-bold uppercase tracking-wider bg-gray-100 px-3 py-1 rounded text-gray-600 mb-3 inline-block">
+            {product.category.replace("-", " ")}
+          </span>
+          <h1 className="text-3xl font-extrabold text-gray-900 mb-4">{product.name}</h1>
+          
           <div className="flex items-center gap-3 mb-6">
-            <span className="text-2xl font-bold text-gray-950">₹{product.price.toLocaleString('en-IN')}</span>
-            <span className="text-sm text-gray-500 line-through">₹{product.originalPrice.toLocaleString('en-IN')}</span>
+            <span className="text-2xl font-bold text-black">₹{product.price}</span>
+            <span className="text-base text-gray-400 line-through">₹{product.originalPrice}</span>
           </div>
-          <div className="flex gap-4">
-            <Link href="/cart" className="flex-1 bg-black text-white py-3 rounded-lg text-center font-semibold text-sm hover:bg-gray-800 transition-colors">
-              Add to Cart
-            </Link>
-          </div>
+
+          <p className="text-gray-600 mb-6 text-sm leading-relaxed">
+            Premium quality eyewear designed for durability, comfort, and ultimate UV protection. Lightweight frame structure ensuring all-day comfort.
+          </p>
+
+          <button 
+            onClick={handleAddToCart}
+            className="w-full bg-black text-white py-3.5 rounded-xl font-bold hover:bg-gray-800 transition shadow-lg"
+          >
+            Add to Cart & View Cart
+          </button>
         </div>
       </div>
     </div>
