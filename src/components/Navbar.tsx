@@ -11,9 +11,13 @@ export default function Navbar() {
     <nav className="border-b bg-white sticky top-0 z-50 shadow-sm">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-16 flex justify-between items-center">
         
-        {/* Logo / Brand Name */}
-        <Link href="/" className="font-extrabold text-xl tracking-tight text-gray-900">
-          VisionX
+        {/* Old Logo Image */}
+        <Link href="/" className="flex items-center">
+          <img 
+            src="/images/logo.png" 
+            alt="VisionX Logo" 
+            className="h-8 w-auto object-contain" 
+          />
         </Link>
 
         {/* Desktop Menu Options */}
