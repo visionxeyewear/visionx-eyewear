@@ -11,12 +11,12 @@ export default function Navbar() {
     <nav className="border-b bg-white sticky top-0 z-50 shadow-sm">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-16 flex justify-between items-center">
         
-        {/* Old Logo Image */}
+        {/* Logo Image - Corrected to logo.jpeg */}
         <Link href="/" className="flex items-center">
           <img 
-            src="/images/logo.png" 
+            src="/images/logo.jpeg" 
             alt="VisionX Logo" 
-            className="h-8 w-auto object-contain" 
+            className="h-9 w-auto object-contain" 
           />
         </Link>
 
