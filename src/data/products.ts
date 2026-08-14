@@ -7,3 +7,6 @@ export interface Product {
   category: "frame-men" | "frame-women" | "sunglasses-men" | "sunglasses-women";
   tag?: string;
 }
+
+export const allProducts: Product[] = [];
+export const products = allProducts;
