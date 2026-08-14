@@ -1,15 +1,33 @@
 "use client";
-import { useState } from "react";
-import { allProducts } from "@/data/products";
+import { useState, useEffect } from "react";
+import { Product } from "@/data/products";
+import { supabase } from "@/lib/supabase";
 import ProductCard from "@/components/ProductCard";
 
 export default function SunglassesWomenPage() {
-  const categoryKey = "sunglasses-women";
+  const [products, setProducts] = useState<Product[]>([]);
   const [maxPrice, setMaxPrice] = useState(2000);
+  const [loading, setLoading] = useState(true);
 
-  const products = allProducts.filter(
-    (p) => p.category === categoryKey && p.price <= maxPrice
-  );
+  useEffect(() => {
+    async function fetchProducts() {
+      setLoading(true);
+      const { data, error } = await supabase
+        .from("products")
+        .select("*")
+        .eq("category", "sunglasses-women")
+        .lte("price", maxPrice);
+
+      if (error) {
+        console.error("Error fetching products:", error);
+      } else {
+        setProducts(data || []);
+      }
+      setLoading(false);
+    }
+
+    fetchProducts();
+  }, [maxPrice]);
 
   return (
     <div className="max-w-7xl mx-auto px-4 py-8">
@@ -25,11 +43,17 @@ export default function SunglassesWomenPage() {
         />
       </div>
 
-      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
-        {products.map((product) => (
-          <ProductCard key={product.id} product={product} />
-        ))}
-      </div>
+      {loading ? (
+        <p className="text-center py-12">Loading products from Supabase...</p>
+      ) : products.length === 0 ? (
+        <p className="text-gray-500">No products found.</p>
+      ) : (
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+          {products.map((product) => (
+            <ProductCard key={product.id} product={product} />
+          ))}
+        </div>
+      )}
     </div>
   );
 }
